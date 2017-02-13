@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/todo.jpg">
+    <img id="header" src="./assets/todo.jpg">
     <router-view></router-view>
   </div>
 </template>
@@ -16,8 +16,13 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
+  background-color: #E2E4F6;
 }
+
+#header {
+  width: 100%;
+}
+
 </style>

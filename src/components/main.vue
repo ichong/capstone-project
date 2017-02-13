@@ -6,25 +6,25 @@
 
         <input type="checkbox" id="mark-all">
         <input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
-        <button>Clear List</button>
+        <button v-on:click="clearList">Clear List</button>
   
       </section>
     
     <!-- Unordered list for holding our to-do items -->
       <ul class="list">
 
-        <li v-for="task in taskList">
+        <li v-for="task in taskList" v-bind:class= "{done:task.checked}">
 
-          <input type="checkbox" class="checkbox">
+          <input type="checkbox" class="checkbox" v-model="task.checked">
           <label for="checkbox">{{ task.text }}</label>
-          <button class="delete">X</button>
+          <button class="delete" v-on:click="removeTask(task)">X</button>
 
         </li>
      
       </ul>
 
       <!-- Will string the contents of the data object and display on page-->
-      <pre>{{ $data }}</pre>
+      <!--<pre>{{ $data }}</pre>-->
 
   <!-- </div>   -->
   </div>
@@ -54,6 +54,15 @@ export default {
         // reset newTask to an empty string so input field is cleared
         this.newTask = ''
       }
+    },
+
+    removeTask: function (task) {
+      var index = this.taskList.indexOf(task)
+      this.taskList.splice(index, 1)
+    },
+
+    clearList: function () {
+      this.taskList = []
     }
   }
 }
@@ -147,7 +156,7 @@ button {
 }
 
 .list li.done label {
-  color: #ddd;
+  color: #dddddd;
   text-decoration: line-through;
 }
 
