@@ -8,52 +8,59 @@ ul, li {
 body {
 	line-height: 1;
 	font-family: "Lato", sans-serif;
-	background-color: #E5C1BD;
+	background-color: #E2E4F6;
 }
 
 .container {
 	width: 70%;
 	margin: 1em auto 3em;
-	border: 1px solid #D2D0BA;
+	border: 1px solid #DEFFFC;
 }
 
 .panel, li {
+	/*use flexbox */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	list-style-type: none;
 	padding: 10px;
-	border-bottom: 1px solid #5E747F;
-	background-color: #B6BE9C;
+	border-bottom: 1px solid #DEFFFC;
+	background-color: #E7C8DD;
 }
 
 .text-input {
-	border: 1px solid #dedede;
+	border: 1px solid #E7C8DD;
 	padding-left: 10px;
 	width: 70%;
 	height: 35px;
 	color: #555;
+	font-size: 1.125rem;
+	font-weight: 200;
 }
 
 button {
 	color: #555;
 	background-color: #FFFFFF;
-	border: 1px solid #D2D0BA;
+	border: 1px solid #DEFFFC;
 	outline: 0;
 	width: 100px;
 	height: 38px;
 	cursor: pointer;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 /* Task area */ 
 .list li {
-	background-color: #7B9E87;
+	background-color: #86626E;
+}
+
+.list li .checkbox {
+	margin-right: 40px;
 }
 
 .list li .delete {
 	background-color: transparent;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #86626E;
 	color: #ddd;
 	/*hide the delete button by default*/
 	visibility: hidden;
@@ -72,13 +79,13 @@ button {
 	width: 70%;
 	font-size: 18px;
 	line-height: 24px;
-	color: red;
+	color: #fcfcfc;
 	z-index: 2;
 	overflow: hidden;
 }
 
 .list li.done label {
-	color: red;
+	color: #ddd;
 	text-decoration: line-through;
 }
 

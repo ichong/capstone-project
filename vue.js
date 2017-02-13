@@ -11,13 +11,6 @@
 
 /*  */
 
-//Create a new Vue instance
-new Vue({
-  //Bind this Vue instance to our container div with an ID of todo 
-  el: "#todo"
-});
-
-
 /**
  * Convert a value to a string that is actually rendered.
  */

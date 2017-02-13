@@ -14,24 +14,28 @@
   		<section class="panel">
 
   			<input type="checkbox" id="mark-all">
-  			<input type="text" placeholder="What do you need to do?" autofocus class="text-input">
+  			<input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
   			<button>Clear List</button>
   
   		</section>
   	
-  	<!-- Unorderd list for holding our todo items -->
+  	<!-- Unordered list for holding our to-do items -->
   		<ul class="list">
 
-  			<li>
+  			<li v-for="task in taskList">
+
   				<input type="checkbox" class="checkbox">
-  				<input type="text" class="text-input">
-  				<label for="checkbox"></label>
+  				<label for="checkbox">{{ task.text }}</label>
   				<button class="delete">X</button>
 
   			</li>
    	 
   		</ul>
+
+      <!-- Will string the contents of the data object and display on page-->
+      <pre>{{ $data }}</pre>
+
 	</div>
-    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
   </body>
 </html>
