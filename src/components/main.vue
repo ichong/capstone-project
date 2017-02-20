@@ -1,41 +1,72 @@
 <template>
   <div class="main">
-  <div class="container" id="todo">
-    <!-- Panel for holding our input -->
-      <section class="panel">
+    <div v-if="! user">Login</div>
 
-        <input type="checkbox" id="mark-all">
-        <input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
-        <button v-on:click="clearList">Clear List</button>
-  
-      </section>
+    <div v-if="user" class="container" id="todo">
+      <!-- Panel for holding our input -->
+        <section class="panel">
+
+          <input type="checkbox" id="mark-all">
+          <input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
+          <button v-on:click="clearList">Clear List</button>
     
-    <!-- Unordered list for holding our to-do items -->
-      <ul class="list">
+        </section>
+      
+      <!-- Unordered list for holding our to-do items -->
+        <ul class="list">
 
-        <li v-for="task in taskList" v-bind:class= "{done:task.checked}">
+          <li v-for="task in taskList" v-bind:class= "{done:task.checked}">
 
-          <input type="checkbox" class="checkbox" v-model="task.checked">
-          <label for="checkbox">{{ task.text }}</label>
-          <button class="delete" v-on:click="removeTask(task)">X</button>
+            <input type="checkbox" class="checkbox" v-model="task.checked">
+            <label for="checkbox">{{ task.text }}</label>
+            <button class="delete" v-on:click="removeTask(task)">X</button>
 
-        </li>
-     
-      </ul>
+          </li>
+       
+        </ul>
 
-  </div>  
+    </div>  
   </div>
 </template>
 
 <script>
+import firebase from 'firebase'
+
+var config = {
+  apiKey: 'AIzaSyAtn19jcwH4G9uGbgbBPK6OfxEi9R2MPV4',
+  authDomain: 'capstone-project-4d82d.firebaseapp.com',
+  databaseURL: 'https://capstone-project-4d82d.firebaseio.com',
+  storageBucket: 'capstone-project-4d82d.appspot.com',
+  messagingSenderId: '918035012949'
+}
+
+firebase.initializeApp(config)
+
 export default {
   name: 'todo',
   data: function () {
     return {
       newTask: '',
-      taskList: []
+      taskList: [],
+      user: null,
+      dbRef: ''
     }
   },
+  beforeCreate: function () {
+    var provider = new firebase.auth.GoogleAuthProvider()
+
+    var main = this
+
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+      var user = result.user
+      main.user = user
+      main.dbRef = 'lists/' + user.uid
+      main.$bindAsArray('taskList', firebase.database().ref(main.dbRef))
+    }).catch(function (e) {
+      console.log(e)
+    })
+  },
+
   methods: {
 
     addTask: function () {
@@ -44,18 +75,18 @@ export default {
       // if task is not an empty string
       if (task) {
         // push an object containing the task to the task List array
-        this.taskList.push({
+        firebase.database().ref(this.dbRef).push({
           text: task,
           checked: false
         })
+
         // reset newTask to an empty string so input field is cleared
         this.newTask = ''
       }
     },
 
     removeTask: function (task) {
-      var index = this.taskList.indexOf(task)
-      this.taskList.splice(index, 1)
+      firebase.database().ref(this.dbRef).child(task['.key']).remove()
     },
 
     clearList: function () {

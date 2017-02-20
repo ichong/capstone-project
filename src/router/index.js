@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import Firebase from 'firebase'
+var VueFire = require('vuefire')
 import Router from 'vue-router'
 
 Vue.use(Router)
+Vue.use(VueFire)
 
 import main from 'components/main'
-import login from 'components/login'
 
 export default new Router({
   routes: [
@@ -13,10 +13,6 @@ export default new Router({
       path: '/',
       name: 'main',
       component: main
-    },
-    {
-    	path: '/login',
-    	component: login,
-	}	
+    }
   ]
 })
