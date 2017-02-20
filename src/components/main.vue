@@ -23,10 +23,7 @@
      
       </ul>
 
-      <!-- Will string the contents of the data object and display on page-->
-      <!--<pre>{{ $data }}</pre>-->
-
-  <!-- </div>   -->
+  </div>  
   </div>
 </template>
 
