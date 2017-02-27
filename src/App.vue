@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img id="header" src="./assets/todo.jpg">
+    <div id="header-container">
+      <h1>Wedding To-Do Tasklist</h1>
+    </div>
+    
     <router-view></router-view>
   </div>
 </template>
@@ -12,17 +15,56 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  line-height: 1;
+  font-family: "Lato", sans-serif;
+  background-color: #F9EAE1;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 40px;
-  background-color: #E2E4F6;
+  color: #84828F;
+  margin: 0;
+  background-color: #F9EAE1;
+}
+
+#header-container {
+  position: relative;
+  height: 70vh;
+  width: 70%;
+  margin: 0 auto;
+  background-image: url('/static/cover.jpg');
+  background-size: cover;
+}
+
+#header-container h1 {
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-size: 52px;
+  font-family: times;
+  color: #333;
+}
+
+#header-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 #header {
-  width: 100%;
+  display: block;
+  width: 70%;
+  margin: auto;
 }
 
 </style>
