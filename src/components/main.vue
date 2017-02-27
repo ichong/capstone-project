@@ -104,9 +104,15 @@ ul, li {
   border: 0;
 }
 
+body {
+  line-height: 1;
+  font-family: "Lato", sans-serif;
+  background-color: #E2E4F6;
+}
+
 .container {
   width: 70%;
-  margin: 90px auto 3em;
+  margin: 1em auto 3em;
   border: 1px solid #DEFFFC;
 }
 
@@ -189,6 +195,8 @@ button {
     width: 90%;
     max-width: 90%;
   }
-
+  button {
+    width: 80px;
+  }
 }
 </style>
