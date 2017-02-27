@@ -36,7 +36,7 @@ body {
   height: 70vh;
   width: 70%;
   margin: 0 auto;
-  background-image: url('/static/cover.jpg');
+  background-image: url('/capstone-project/static/cover.jpg');
   background-size: cover;
 }
 
