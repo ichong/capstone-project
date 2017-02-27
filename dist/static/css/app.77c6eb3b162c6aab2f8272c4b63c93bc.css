@@ -18,7 +18,7 @@ body {
   height: 70vh;
   width: 70%;
   margin: 0 auto;
-  background-image: url('/static/cover.jpg');
+  background-image: url('/capstone-project/static/cover.jpg');
   background-size: cover;
 }
 #header-container h1 {
@@ -133,4 +133,4 @@ button[data-v-9956c738] {
 }
 }
 
-/*# sourceMappingURL=app.4cf7813e51ab16299435df9f56454e5a.css.map*/
+/*# sourceMappingURL=app.77c6eb3b162c6aab2f8272c4b63c93bc.css.map*/
