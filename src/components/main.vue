@@ -6,7 +6,7 @@
       <!-- Panel for holding our input -->
         <section class="panel">
 
-          <input type="checkbox" id="mark-all">
+          <input type="checkbox" id="mark-all" v-bind:checked="areAllSelected" v-on:click="toggleClicked">
           <input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
           <button v-on:click="clearList">Clear List</button>
     
@@ -67,6 +67,17 @@ export default {
     })
   },
 
+  computed: {
+    areAllSelected: function () {
+      return this.taskList.every(function (task) {
+        return task.checked
+      })
+    },
+    tasksExist: function () {
+      return this.taskList.length > 0
+    }
+  },
+
   methods: {
 
     addTask: function () {
@@ -90,7 +101,24 @@ export default {
     },
 
     clearList: function () {
-      this.taskList = []
+      var t = this
+      firebase.database().ref(t.dbRef).remove()
+    },
+
+    toggleClicked: function () {
+      if (this.tasksExist) {
+        this.toggleAllTasks()
+      }
+    },
+
+    toggleAllTasks: function () {
+      var t = this
+      var toggle = !this.areAllSelected
+
+      this.taskList.forEach(function (task) {
+        firebase.database().ref(t.dbRef).child(task['.key']).update({checked: toggle})
+        // task.checked = toggle
+      })
     }
   }
 }
