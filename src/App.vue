@@ -33,7 +33,7 @@ body {
 
 #header-container {
   position: relative;
-  height: 70vh;
+  height: 50vh;
   width: 70%;
   margin: 0 auto;
   background-image: url('/capstone-project/static/cover.jpg');

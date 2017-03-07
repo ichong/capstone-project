@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <div v-if="! user">Login</div>
-
+    <div id="instructions">
+      <h3>Enter your tasks below. Check off when complete. Your to-dos will be saved.</h3>
+    </div>
     <div v-if="user" class="container" id="todo">
       <!-- Panel for holding our input -->
         <section class="panel">
@@ -132,9 +134,13 @@ ul, li {
   border: 0;
 }
 
+#instructions {
+  text-align: center;
+}
+
 .container {
   width: 70%;
-  margin: 90px auto 3em;
+  margin: 30px auto 3em;
   border: 1px solid #DEFFFC;
 }
 
