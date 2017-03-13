@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="header-container">
-      <h1>Wedding To-Do Tasklist</h1>
+      <h1>Wedding Tasklist</h1>
     </div>
     
     <router-view></router-view>
@@ -33,10 +33,12 @@ body {
 
 #header-container {
   position: relative;
-  height: 50vh;
-  width: 70%;
+  height: 30vh;
+  width: 100%;
   margin: 0 auto;
-  background-image: url('/capstone-project/static/cover.jpg');
+  /*background-image: url('/capstone-project/static/cover.jpg');*/
+  background: #fff;
+  border-bottom: 1px solid #999;
   background-size: cover;
 }
 
@@ -47,7 +49,8 @@ body {
   top: 40%;
   width: 100%;
   font-size: 52px;
-  font-family: times;
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Clicker Script', cursive;
   color: #333;
 }
 
