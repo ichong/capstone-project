@@ -1,0 +1,190 @@
+
+body {
+  margin: 0;
+  line-height: 1;
+  font-family: "Lato", sans-serif;
+  background-color: #F9EAE1;
+}
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #84828F;
+  margin: 0;
+  background-color: #F9EAE1;
+}
+#header-container {
+  position: relative;
+  height: 30vh;
+  width: 100%;
+  margin: 0 auto;
+  /*background-image: url('/capstone-project/static/cover.jpg');*/
+  background: #fff;
+  border-bottom: 1px solid #999;
+  background-size: cover;
+}
+#header-container h1 {
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-size: 52px;
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Clicker Script', cursive;
+  color: #333;
+}
+#header-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#header {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
+
+
+ul[data-v-9956c738], li[data-v-9956c738] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.instructions[data-v-9956c738] {
+  text-align: center;
+}
+.container[data-v-9956c738] {
+  width: 70%;
+  margin: 30px auto 3em;
+  border: 1px solid #DEFFFC;
+}
+.panel[data-v-9956c738], li[data-v-9956c738] {
+  /*use flexbox */
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 1px solid #DEFFFC;
+  background-color: #E7C8DD;
+}
+.text-input[data-v-9956c738] {
+  border: 1px solid #E7C8DD;
+  padding-left: 10px;
+  width: 70%;
+  height: 35px;
+  color: #555;
+  font-size: 1.125rem;
+  font-weight: 200;
+}
+button[data-v-9956c738] {
+  color: #555;
+  background-color: #FFFFFF;
+  border: 1px solid #DEFFFC;
+  outline: 0;
+  width: 100px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Task area */
+.list li[data-v-9956c738] {
+  background-color: #86626E;
+}
+.list li .checkbox[data-v-9956c738] {
+  margin-right: 40px;
+}
+.list li .delete[data-v-9956c738] {
+  background-color: transparent;
+  border: 1px solid #86626E;
+  color: #ddd;
+  /*hide the delete button by default*/
+  visibility: hidden;
+  font-size: 20px;
+  font-weight: bold;
+}
+.list li:hover > .delete[data-v-9956c738] {
+  /* show the delete button when hovering on list item*/
+  visibility: visible;
+}
+.list label[data-v-9956c738] {
+  padding-right: 10px;
+  display: inline-block;
+  width: 70%;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fcfcfc;
+  z-index: 2;
+  overflow: hidden;
+}
+.list li.done label[data-v-9956c738] {
+  color: #dddddd;
+  text-decoration: line-through;
+}
+.login-button[data-v-9956c738] {
+  width: 220px;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 1.5em;
+  font-weight: 200;
+  color: #ffffff;
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+.login-button[data-v-9956c738]:hover {
+  background-color: #ffffff;
+  color: #333;
+}
+.user-info[data-v-9956c738] {
+  position: fixed;
+  right: 10px;
+  left: 10px;
+  top: 10px;
+}
+.user-info h3[data-v-9956c738] {
+  float: left;
+  font-size: 14px;
+}
+.avatar[data-v-9956c738] {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  background-size: cover;
+  float: right;
+  margin-top: 0px;
+}
+.logout-button[data-v-9956c738] {
+  font-size: 14px;
+  text-align: right;
+  color: #333;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+.logout-button[data-v-9956c738]:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+.container[data-v-9956c738] {
+    width: 90%;
+    max-width: 90%;
+}
+}
+
+/*# sourceMappingURL=app.e26a8ac09e441e3695303ea28af146c1.css.map*/
